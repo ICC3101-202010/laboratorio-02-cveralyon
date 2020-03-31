@@ -35,7 +35,6 @@
     <Compile Include="Cancion.cs" />
     <Compile Include="Espotifai.cs" />
     <Compile Include="plan.cs" />
-    <Compile Include="repertorio.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
