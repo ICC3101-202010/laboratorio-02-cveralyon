@@ -1,7 +1,7 @@
 ﻿using System;
 namespace lab02
 {
-    public class Cancion : Espotifai
+    public class Cancion : Plan
     {
         // atributos
         public string nombre { get; set; }
@@ -24,9 +24,7 @@ namespace lab02
         //metodos
         public string Informacion()
         {
-            string v = $"Genero: {genero}\nArtista: {artista}\nAlbum: {album}\nNombre: {nombre}";
-            return v;
-               
+            return "Genero: " + genero + "\nArtista: " + artista + "\nAlbum: " + album + "\nNombre: " + nombre;
         }
 
         

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace lab02
 {
-    public class Espotifai : Plan
+    public class Espotifai : Cancion
     {
         static int memo;
         public void Contratacion()// aqui se selecciona de cuanta "memoria" sera el arreglo de objetos
@@ -23,7 +23,6 @@ namespace lab02
         }
         Cancion[] repertorio = new Cancion[memo];
 
-        
         public bool AgregarCancion()      
         {
             
@@ -33,7 +32,6 @@ namespace lab02
             string art;
             bool aux = true;
 
-            
 
             if (aux == true) { 
 
@@ -46,7 +44,7 @@ namespace lab02
                 Console.WriteLine("Introduzca el nombre del Artista: ");
                 art = Console.ReadLine();
 
-                for (int i = 1; i <= repertorio.Length; i++)
+                for (int i = 0; i < repertorio.Length; i++)
                 {
                     if (repertorio[i].nombre == n && repertorio[i].genero == g && repertorio[i].album == al && repertorio[i].artista == art)
                     {
@@ -55,7 +53,7 @@ namespace lab02
                     }
                     else
                     {
-                        for (int e = 1; e <= repertorio.Length; e++)
+                        for (int e = 0; e < repertorio.Length; e++)
                         {
                             repertorio[e] = new Cancion(n, g, al, art);                         
                           
@@ -76,11 +74,13 @@ namespace lab02
 
             
         }
+
         public void VerCanciones()
         {
-            for (int u = 0;  u <= repertorio.Length; u++)
+            for (int u = 0;  u < repertorio.Length; u++)
             {
-                Console.WriteLine(repertorio[u].Informacion());
+                Console.WriteLine("\t\t\tLISTA DE CANCIONES: \n");
+                Console.WriteLine(repertorio[u]);
             } 
 
         }
