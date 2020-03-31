@@ -4,24 +4,25 @@ namespace lab02
     public class Espotifai : Cancion
     {
         static int memo;
-        public void Contratacion()// aqui se selecciona de cuanta "memoria" sera el arreglo de objetos
+        static int memo1;
+        public int Contratacion()// aqui se selecciona de cuanta "memoria" sera el arreglo de objetos
         {
             Plan p = new Plan();
-            int v;
-            while (p.Memory() == false)
+            
+            while (p.m == 0)
             {
                 Console.WriteLine("Introduzca el numero de plan que desea contratar:\n " +
                    "\t\t Plan 1: Plan basico que incluye un espacio para almacenar hasta 100 canciones\n" +
                    "\t\t Plan 2: Plan medio que incluye un espacio para almacenar hasta 300 canciones\n" +
                    "\t\t Plan 3: Plan Premium que incluye un espacio para almacenar hasta 1000 canciones\n");
 
-
-                v = int.Parse(Console.ReadLine());
-                p.me = v;
+                
+                memo = int.Parse(Console.ReadLine());                             
             }
-        memo = p.m;
+            memo1 = p.Memory(memo);
         }
-        Cancion[] repertorio = new Cancion[memo];
+        Cancion[] repertorio = new Cancion[memo1];
+
 
         public bool AgregarCancion()      
         {
@@ -45,7 +46,7 @@ namespace lab02
                 Console.WriteLine("Introduzca el nombre del Artista: ");
                 art = Console.ReadLine();
 
-                for (int i = 0; i < repertorio.Length; i++)
+                for (int i = 0; i < repertorio.Length; i += i)
                 {
                     if (repertorio[i].nombre == n && repertorio[i].genero == g && repertorio[i].album == al && repertorio[i].artista == art)
                     {
@@ -77,10 +78,8 @@ namespace lab02
         {
             Console.WriteLine("\t\t\tLISTA DE CANCIONES: \n");
             for (int u = 0;  u < repertorio.Length; u++)
-            {
-                string[] ver = new string[repertorio.Length];
-                ver[0] = " " + repertorio[0] + " \n ";
-                Console.WriteLine(ver);
+            {           
+                Console.WriteLine(repertorio[0].Informacion);
             }
             
         }
@@ -175,6 +174,7 @@ namespace lab02
                     Console.WriteLine("\t\t\t-----ERROR-----\n");
                     Console.WriteLine("\t\t\tINGRESE UNA OPCION VALIDA");
                     return canc4;
+
                     
             }
              

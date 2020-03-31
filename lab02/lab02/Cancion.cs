@@ -22,12 +22,9 @@ namespace lab02
         }
 
         //metodos
-        public string Informacion()
-        {
-            return "Genero: " + genero + "\nArtista: " + artista + "\nAlbum: " + album + "\nNombre: " + nombre;
-        }
+        public string Informacion() => "Genero: " + genero + "\nArtista: " + artista + "\nAlbum: " + album + "\nNombre: " + nombre;
 
-        
+
     }
 }
 

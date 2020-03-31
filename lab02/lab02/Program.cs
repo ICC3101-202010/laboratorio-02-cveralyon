@@ -42,7 +42,7 @@ namespace lab02
                         criterio = int.Parse(Console.ReadLine());
                         Console.WriteLine("Escriba el nombre del criterio seleccionado. (nombre del artista o almbum, tipo de genero o nombre de la cancion");
                         valor = Console.ReadLine();
-                        esp.CancionesPorCriterio(criterio, valor);
+                        Console.WriteLine(esp.CancionesPorCriterio(criterio, valor));
                         break;
                     case 4:
                         break;
