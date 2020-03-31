@@ -1,33 +1,32 @@
 ﻿using System;
 namespace lab02
 {
-    public class Plan
+    public class Plan 
     {
         public int m;
         public int me;
 
-       
-
         public bool Memory()
         {
 
-            if (me == 100)
+            if (me == 1)
             {
-                m = me;
+                m = 101;
                 return true;
             }
-            else if (me == 300)
+            else if (me == 2)
             {
-                m = me;
+                m = 301;
                 return true;
             }
-            else if (me == 1000)
+            else if (me == 3)
             {
-                m = me;
+                m = 1001;
                 return true;
             }
             else
             {
+                Console.WriteLine("Debes ingresar una opcion valida");
                 return false;
             }
         }

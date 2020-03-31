@@ -4,26 +4,41 @@ namespace lab02
 {
     class MainClass
     {
-        public void main(string[] args)
+        static void Main()
         {
-            Plan p = new Plan();
-            int v;
-            while (p.Memory() == false)
+            int opcion;
+            Console.WriteLine("Bienvenido a la plataforma de Espotifai, donde podras guardar y ver todas tus canciones favoritas\n\n");
+            Console.WriteLine("Para Comenzar debes elegir unos de los 3 planes que tenemos para ti");
+
+            Espotifai esp = new Espotifai();
+            esp.Contratacion();
+            Console.WriteLine("Felicidades, te has suscrito\n");
+            Console.WriteLine("\n");
+            do
             {
-                Console.WriteLine("Introduzca el numero de plan que desea contratar:\n " +
-                   "\t\t Plan 1: Plan basico que incluye un espacio para almacenar hasta 100 canciones\n" +
-                   "\t\t Plan 2: Plan medio que incluye un espacio para almacenar hasta 300 canciones\n" +
-                   "\t\t Plan 3: Plan Premium que incluye un espacio para almacenar hasta 1000 canciones\n");
+                Console.WriteLine("\t\t\t\t\t------MENU-----\n");
+                Console.WriteLine("1 -->  Ver Todas mis canciones\n");
+                Console.WriteLine("2 -->  Agregar una nueva Cancion\n");
+                Console.WriteLine("3 -->  Salir de Espotifai\n");
+                opcion = int.Parse(Console.ReadLine());
 
-
-                v = int.Parse(Console.ReadLine());
-                p.me = v;
-                
-                
+                switch (opcion)
+                {
+                    case 1:
+                        esp.VerCanciones();
+                        break;
+                    case 2:
+                        esp.AgregarCancion();
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        Console.WriteLine("Ingrese una opcion valida");
+                        break;
+                }
             }
-
-
-
+            while (opcion != 3);
+            
         }
  
     }

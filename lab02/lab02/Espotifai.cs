@@ -4,7 +4,7 @@ namespace lab02
     public class Espotifai : Plan
     {
         static int memo;
-        public void Contratacion(string[] args)// aqui se selecciona de cuanta "memoria" sera el arreglo de objetos
+        public void Contratacion()// aqui se selecciona de cuanta "memoria" sera el arreglo de objetos
         {
             Plan p = new Plan();
             int v;
@@ -32,6 +32,9 @@ namespace lab02
             string al;
             string art;
             bool aux = true;
+
+            
+
             if (aux == true) { 
 
                 Console.WriteLine("Introduzca el nombre de la cancion que desea agregar: ");
@@ -43,7 +46,7 @@ namespace lab02
                 Console.WriteLine("Introduzca el nombre del Artista: ");
                 art = Console.ReadLine();
 
-                for (int i = 0; i <= repertorio.Length; i++)
+                for (int i = 1; i <= repertorio.Length; i++)
                 {
                     if (repertorio[i].nombre == n && repertorio[i].genero == g && repertorio[i].album == al && repertorio[i].artista == art)
                     {
@@ -52,13 +55,10 @@ namespace lab02
                     }
                     else
                     {
-                        for (int e = 0; e <= repertorio.Length; e++)
+                        for (int e = 1; e <= repertorio.Length; e++)
                         {
-                            repertorio[e] = new Cancion();
-                            repertorio[e].nombre = n;
-                            repertorio[e].genero = g;
-                            repertorio[e].album = al;
-                            repertorio[e].artista = art;
+                            repertorio[e] = new Cancion(n, g, al, art);                         
+                          
                         }
                         aux = true;
                         return aux;
@@ -69,9 +69,9 @@ namespace lab02
             }
             else
             {
-                return false;
+                return aux;
             }
-            
+            return aux;
 
 
             
@@ -80,10 +80,8 @@ namespace lab02
         {
             for (int u = 0;  u <= repertorio.Length; u++)
             {
-                Console.WriteLine("Nombre: "+ repertorio[u].nombre +" , Genero: "+ repertorio[u].genero +" , Album: "+ repertorio[u].album +" , Artista: "+ repertorio[u].artista);
-                
-                
-            }
+                Console.WriteLine(repertorio[u].Informacion());
+            } 
 
         }
     }
